@@ -14,7 +14,7 @@ def say():
 print(say())
 
 
-def add(a, b):
+def add1(a, b):
     print(f"{a},{b}의 합은 {a+b}입니다.")
 
 
