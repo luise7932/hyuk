@@ -8,5 +8,24 @@ class test():
         result = self.first + self.second
         return result
 
+class More(test):                           # test를 상속받는 클래스이다.
+    def pow(self):
+        result = self.first ** self.second  # **는 제곱이다.
+        return result
+""" 메서드 오버라이딩 """
+class SafeMore(test):
+    """
+    안전장치 설정
+    """
+    def div(self):
+        if self.second == 0:                # 부모 클래스 test에 있는 메소드를 덮어쓰기함. 이것을 메소드 오버라이딩이라고 한다.
+            return 0
+        else:
+            return self.first / self.second
+
+
 a = test(3,4)
 print(a.add())
+b = More(5,7)                               # test의 모든 메소드를 사용 가능하다.
+print(b.add())
+print(b.pow())
