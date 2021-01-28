@@ -1,22 +1,28 @@
-module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
+module.exportss = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
+  parser: "babel-eslint",
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:prettier/recommended"
+  },
+
+  plugins: ["react", "prettier"],
+  rules: {
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+    "react/prop-types": "off",
+    "no-var": "error",
+    "no-dupe-keys": "error",
+  },
 };
